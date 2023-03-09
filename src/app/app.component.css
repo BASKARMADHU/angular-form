@@ -1,0 +1,7 @@
+*{
+    margin-top: 10px;
+}
+h3{
+    display: grid;
+    justify-items: center;
+}
