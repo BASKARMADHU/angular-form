@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AddressComponent } from './address/address.component';
+import { RegisterformComponent } from './registerform/registerform.component';
+
+import { FormsModule,ReactiveFormsModule }from'@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,10 +16,13 @@ import { AddressComponent } from './address/address.component';
     LoginComponent,
     HomeComponent,
     AddressComponent,
+    RegisterformComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

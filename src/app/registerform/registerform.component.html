@@ -1,40 +1,35 @@
-<!-- <div class="card mt-5">
-    <h4 class="card-header">Login Form</h4>
-    <div class="card-body">
-        <form >
-            <div class="form-group p-2">
-                <label for="username">Username</label>
-                <input type="text" formControlName="username" class="form-control" />
-            </div>
-            <div class="form-group p-2">
-                <label for="password">Password</label>
-                <input type="password" formControlName="password" class="form-control" />
-            </div>
-            <div class="form-group p-2">
-               <button class="btn btn-primary" (click)="login()">Login</button>
-            </div>
-        </form>
-    </div>
-</div> -->
-
-
 <div class="container-fluid mt-5 card">
     <div class="row justify-content-center">
       <div class="col-4 card-body">
         <form [formGroup]="reactiveForm" #form="ngForm" >
-            <h4 class="card-header ">Login Form</h4>
+            <h4 class="card-header ">Register Form</h4>
           <div class="form-group p-2">
-              <label for="username" class="form-label">User Name:</label>
-              <input type="text" id="username" name="username" formControlName="username" placeholder="Your name" required minlength="1" maxlength="250" class="form-control form-control-sm" [class.is-invalid]="username.invalid && (username.dirty || username.touched)">
-              <div *ngIf="username.invalid && (username.dirty || username.touched)" class="invalid-feedback">
-                <div *ngIf="username.errors?.['required']">
+              <label for="name" class="form-label">Name:</label>
+              <input type="text" id="name" name="name" formControlName="name" placeholder="Your name" required minlength="1" maxlength="250" class="form-control form-control-sm" [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
+              <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+                <div *ngIf="name.errors?.['required']">
                   This field is required.
                 </div>
-                <div *ngIf="username.errors?.['minlength']">
+                <div *ngIf="name.errors?.['minlength']">
                   This field must have at least 1 character.
                 </div>
-                <div *ngIf="username.errors?.['maxlength']">
+                <div *ngIf="name.errors?.['maxlength']">
                   This field must have at most 250 characters.
+                </div>
+              </div>
+          </div>
+          <div class="form-group p-2">
+              <label for="number" class="form-label">Number:</label>
+              <input type="Number" id="number" name="number" formControlName="number" placeholder="Your number" required minlength="10" maxlength="10" class="form-control form-control-sm" [class.is-invalid]="number.invalid && (number.dirty || number.touched)">
+              <div *ngIf="number.invalid && (number.dirty || number.touched)" class="invalid-feedback">
+                <div *ngIf="number.errors?.['required']">
+                  This field is required.
+                </div>
+                <div *ngIf="number.errors?.['minlength']">
+                  This field must have at least 10 character.
+                </div>
+                <div *ngIf="number.errors?.['maxlength']">
+                  This field must have at most 10 characters.
                 </div>
               </div>
           </div>
@@ -60,12 +55,9 @@
         </form>
       </div>
     </div>
-</div>
+    </div>
     
 
 
 
 
-
-   
-    
