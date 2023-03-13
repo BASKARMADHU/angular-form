@@ -14,15 +14,15 @@ interface IUser {
   styleUrls: ['./registerform.component.css']
 })
 
-
 export class RegisterformComponent implements OnInit {
+
+  userdetails :any =[]
 
   reactiveForm!: FormGroup;
   user: IUser;
 
   constructor(private router:Router) {
     this.user = {} as IUser;
-    
   }
 
   ngOnInit(): void {
@@ -30,11 +30,11 @@ export class RegisterformComponent implements OnInit {
       name: new FormControl(this.user.name, [
         Validators.required,
         Validators.minLength(1),
-        Validators.maxLength(250)
+        Validators.maxLength(50)
       ]),
       password: new FormControl(this.user.password, [
         Validators.required,
-        Validators.minLength(15)
+        Validators.minLength(8)
       ]),
       number: new FormControl(this.user.number,[
         Validators.required,
@@ -53,6 +53,10 @@ export class RegisterformComponent implements OnInit {
     return this.reactiveForm.get('number')!;
   }
 
+  push(){
+    
+  }
+
   public validate(): void {
     if (this.reactiveForm.invalid) {
       for (const control of Object.keys(this.reactiveForm.controls)) {
@@ -62,7 +66,10 @@ export class RegisterformComponent implements OnInit {
     }
     this.user = this.reactiveForm.value;
     this.router.navigate(['/home']);
+    this.userdetails.push(this.user);
+    console.log(this.user);
     }
+
   }
 
 

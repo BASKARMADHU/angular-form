@@ -5,7 +5,7 @@
             <h4 class="card-header ">Register Form</h4>
           <div class="form-group p-2">
               <label for="name" class="form-label">Name:</label>
-              <input type="text" id="name" name="name" formControlName="name" placeholder="Your name" required minlength="1" maxlength="250" class="form-control form-control-sm" [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
+              <input type="text" id="name" name="name" formControlName="name" placeholder="Your name" required minlength="1" maxlength="50" class="form-control form-control-sm" [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
               <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
                 <div *ngIf="name.errors?.['required']">
                   This field is required.
@@ -14,7 +14,7 @@
                   This field must have at least 1 character.
                 </div>
                 <div *ngIf="name.errors?.['maxlength']">
-                  This field must have at most 250 characters.
+                  This field must have at most 50 characters.
                 </div>
               </div>
           </div>
@@ -42,7 +42,7 @@
                     This field is required.
                   </div>
                   <div *ngIf="password.errors?.['minlength']">
-                    This field must have at least 15 characters.
+                    This field must have at least 8 characters.
                   </div>
                 </div>
               </div>
@@ -55,7 +55,7 @@
         </form>
       </div>
     </div>
-    </div>
+</div>
     
 
 
