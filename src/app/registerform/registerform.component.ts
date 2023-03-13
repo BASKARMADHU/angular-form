@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UsersService } from '../services/users.service';
  
 interface IUser {
   name: string;
@@ -21,7 +22,7 @@ export class RegisterformComponent implements OnInit {
   reactiveForm!: FormGroup;
   user: IUser;
 
-  constructor(private router:Router) {
+  constructor(private router:Router,private _saveservice:UsersService) {
     this.user = {} as IUser;
   }
 
@@ -68,6 +69,11 @@ export class RegisterformComponent implements OnInit {
     this.router.navigate(['/home']);
     this.userdetails.push(this.user);
     console.log(this.user);
+
+    // save data from service file
+      this._saveservice.savedata(this.userdetails).subscribe( sub => {
+        console.log("successfly saved data",sub)
+      })
     }
 
   }
